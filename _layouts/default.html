@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default: 'LibreScienceTool - Open source and open hardware for engineering science' }}">
+    <title>{{ page.title | default: 'LibreScienceTool' }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+</head>
+<body>
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+</body>
+</html>

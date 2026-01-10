@@ -1,0 +1,15 @@
+# Site settings
+title: LibreScienceTool
+description: Open source and open hardware for engineering science
+baseurl: "" # Leave empty if using custom domain or root of GitHub Pages
+url: "" # Your site URL
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

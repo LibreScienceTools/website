@@ -1,0 +1,15 @@
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <h1>LibreScienceTool</h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+            <li><a href="{{ site.baseurl }}/software/" {% if page.url contains "/software/" %}class="active"{% endif %}>Open Source</a></li>
+            <!-- <li><a href="{{ site.baseurl }}/hardware/" {% if page.url contains "/hardware/" %}class="active"{% endif %}>Open Hardware</a></li> -->
+            <li><a href="{{ site.baseurl }}/blog/" {% if page.url contains "/blog/" %}class="active"{% endif %}>Blog</a></li>
+            <li><a href="{{ site.baseurl }}/about/" {% if page.url contains "/about/" %}class="active"{% endif %}>About</a></li>
+        </ul>
+    </div>
+</nav>
