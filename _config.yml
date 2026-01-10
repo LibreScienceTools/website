@@ -1,8 +1,8 @@
 # Site settings
 title: LibreScienceTool
 description: Open source and open hardware for engineering science
-baseurl: "" # Leave empty if using custom domain or root of GitHub Pages
-url: "" # Your site URL
+baseurl: "/website" # Repository name for GitHub Pages
+url: "https://libresciencetools.github.io" # Your GitHub Pages URL
 
 # Build settings
 markdown: kramdown
