@@ -14,7 +14,12 @@
         <div class="nav-brand">
             <h1>LibreScienceTools</h1>
         </div>
-        <ul class="nav-menu">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
             <li><a href="/website/" >Home</a></li>
             <li><a href="/website/software/" class="active">Open Source</a></li>
             <!-- <li><a href="/website/hardware/" >Open Hardware</a></li> -->
@@ -24,6 +29,28 @@
         </ul>
     </div>
 </nav>
+
+<script>
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+});
+</script>
 
 
     <!-- Header -->
