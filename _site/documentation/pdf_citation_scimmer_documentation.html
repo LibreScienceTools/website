@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brief description for SEO">
-    <title>PDF citation scimmer Documentation - LibreScienceTool</title>
+    <meta name="description" content="Complete guide for using PDF Citation Extractor to automatically extract citations from PDF files and generate BibTeX bibliographies">
+    <title>PDF Citation Extractor - User Manual - LibreScienceTool</title>
     <link rel="stylesheet" href="/website/css/style.css">
 </head>
 <body>
@@ -53,25 +53,656 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
-    <section class="content-section">
-    <div class="container">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <article class="blog-post">
-                <h1>Documentation of PDF Citation Scimmer</h1>
-                <div class="blog-date">January 10, 2026</div>
+    <style>
+    .doc-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
 
-                <div style="line-height: 1.8; color: #4b5563;">
-                    
-                    <p>In construction...</p>
-                </div>
+    .doc-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #e2e8f0;
+    }
 
-                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
-                    <a href="index.html" style="color: #2563eb; text-decoration: none;">
-                        ← Back to all posts
-                    </a>
-                </div>
-            </article>
+    .doc-header h1 {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .doc-date {
+        color: #6b7280;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+
+    .doc-intro {
+        font-size: 1.125rem;
+        color: #4b5563;
+        line-height: 1.8;
+        margin-top: 1rem;
+    }
+
+    .toc {
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .toc h2 {
+        font-size: 1.25rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+    }
+
+    .toc ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .toc li {
+        margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .toc a:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+    }
+
+    .doc-section {
+        margin: 3rem 0;
+        line-height: 1.8;
+        color: #4b5563;
+    }
+
+    .doc-section h2 {
+        font-size: 2rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .doc-section h3 {
+        font-size: 1.5rem;
+        color: var(--text-color);
+        margin: 1.5rem 0 1rem;
+    }
+
+    .doc-section h4 {
+        font-size: 1.25rem;
+        color: var(--text-color);
+        margin: 1rem 0 0.5rem;
+    }
+
+    .doc-section p {
+        margin-bottom: 1rem;
+    }
+
+    .doc-section ul, .doc-section ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+    }
+
+    .doc-section li {
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-list {
+        background-color: #f0f9ff;
+        border-left: 4px solid var(--primary-color);
+        padding: 1rem 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .feature-list strong {
+        color: var(--secondary-color);
+    }
+
+    code {
+        background-color: #f1f5f9;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9em;
+        color: #e11d48;
+    }
+
+    pre {
+        background-color: #1e293b;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    pre code {
+        background-color: transparent;
+        padding: 0;
+        color: #e2e8f0;
+    }
+
+    .info-box {
+        background-color: #fef3c7;
+        border-left: 4px solid #f59e0b;
+        padding: 1rem 1.5rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+    }
+
+    .info-box strong {
+        color: #92400e;
+    }
+
+    .success-box {
+        background-color: #d1fae5;
+        border-left: 4px solid #10b981;
+        padding: 1rem 1.5rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+    }
+
+    .options-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+    }
+
+    .options-table th {
+        background-color: #f1f5f9;
+        padding: 0.75rem;
+        text-align: left;
+        font-weight: 600;
+        color: var(--secondary-color);
+        border-bottom: 2px solid #cbd5e1;
+    }
+
+    .options-table td {
+        padding: 0.75rem;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .options-table code {
+        white-space: nowrap;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e2e8f0;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+    .step-number {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: white;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        border-radius: 50%;
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+</style>
+
+<section class="content-section">
+    <div class="doc-container">
+        <div class="doc-header">
+            <h1>PDF Citation Extractor - User Manual</h1>
+            <div class="doc-date">Last Updated: January 2026 | Version 1.0</div>
+            <p class="doc-intro">
+                A comprehensive tool to help scientists and researchers automatically extract citation information
+                from PDF files and generate bibliography files for reference management software.
+            </p>
         </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#prerequisites">Prerequisites</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#quick-start">Quick Start</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Introduction -->
+        <div class="doc-section" id="introduction">
+            <h2>Introduction</h2>
+            <p>
+                PDF Citation Extractor is a tool designed to help scientists and researchers manage their references
+                more efficiently. Instead of manually extracting citation information from PDFs one by one, this tool
+                automatically processes PDF files, extracts metadata (DOI, author, title, journal, etc.), and generates
+                a bibliography file (.bib) that can be imported into reference management software like Citavi, JabRef,
+                or Zotero.
+            </p>
+
+            <div class="feature-list">
+                <strong>Key Features:</strong>
+                <ul>
+                    <li>Automatic DOI extraction from PDF files</li>
+                    <li>Metadata retrieval from CrossRef database</li>
+                    <li>Batch processing of multiple PDFs</li>
+                    <li>Export to BibTeX format</li>
+                    <li>Support for embedded PDF metadata</li>
+                    <li>Optional GROBID integration for enhanced extraction</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Prerequisites -->
+        <div class="doc-section" id="prerequisites">
+            <h2>Prerequisites</h2>
+            <p>Before using PDF Citation Extractor, ensure your system meets the following requirements:</p>
+
+            <h3>System Requirements</h3>
+            <ul>
+                <li><strong>Operating System:</strong> Windows 10 or later (64-bit)</li>
+                <li><strong>RAM:</strong> Minimum 2 GB (4 GB recommended for processing large PDF collections)</li>
+                <li><strong>Disk Space:</strong> At least 100 MB free space</li>
+                <li><strong>Internet Connection:</strong> Required for CrossRef API lookups</li>
+            </ul>
+
+            <h3>Optional Requirements</h3>
+            <ul>
+                <li><strong>GROBID Service</strong> (optional): For advanced PDF metadata extraction
+                    <ul>
+                        <li>Docker Desktop (if running GROBID locally)</li>
+                        <li>Requires additional configuration (see Configuration section)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Installation -->
+        <div class="doc-section" id="installation">
+            <h2>Installation</h2>
+            <p>PDF Citation Extractor is distributed as a standalone executable file that requires no Python installation or dependencies.</p>
+
+            <h3><span class="step-number">1</span> Download the Application and Choose Installation Location</h3>
+            <ol>
+            <li>Download the application
+                (<a href="https://github.com/LibreScienceTools/pdf_citation_scimmer/releases/download/publish_release_v1.0/pdf-citation-extract.exe">Download PDF Citation Scimmer Executable</a>)
+            </p></li>
+            
+                <li>Create a folder where you want to keep the application (e.g., <code>C:\Program Files\PDF Citation Extractor\</code> or <code>C:\Tools\</code>)</li>
+                <li>Copy <code>pdf-citation-extract.exe</code> to this folder</li>
+            </ol>
+
+
+            <h3><span class="step-number">2</span> Verify Installation</h3>
+            <p>Open Command Prompt and navigate to the folder containing the executable:</p>
+            <pre><code>cd C:\path\to\your\folder
+pdf-citation-extract.exe --help</code></pre>
+            <p>You should see the help message with available options.</p>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="doc-section" id="quick-start">
+            <h2>Quick Start</h2>
+            <p>Here's the fastest way to extract citations from your PDFs:</p>
+
+            <div class="success-box">
+                <ol>
+                    <li><strong>Organize your PDFs:</strong> Place all PDF files you want to process in a single folder (e.g., <code>C:\MyPapers\</code>)</li>
+                    <li><strong>Open Command Prompt:</strong> Press <code>Win + R</code>, type <code>cmd</code>, and press Enter, then navigate to the folder containing the executable</li>
+                    <li><strong>Run the extractor:</strong>
+                        <pre><code>pdf-citation-extract.exe --dir "C:\MyPapers" --output citations.bib</code></pre>
+                    </li>
+                    <li><strong>Find your bibliography:</strong> The <code>citations.bib</code> file will be created in the current directory, ready to import into your reference manager!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Usage -->
+        <div class="doc-section" id="usage">
+            <h2>Usage</h2>
+
+            <h3>Command-Line Interface</h3>
+            <p>The application uses command-line options to specify inputs and outputs.</p>
+
+            <h4>Basic Syntax</h4>
+            <pre><code>pdf-citation-extract.exe [OPTIONS]</code></pre>
+
+            <h4>Available Options</h4>
+            <table class="options-table">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Short</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--dir</code></td>
+                        <td><code>-d</code></td>
+                        <td>Directory containing PDF files</td>
+                        <td><code>--dir C:\Papers</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>--pdf</code></td>
+                        <td><code>-p</code></td>
+                        <td>Single PDF file to process</td>
+                        <td><code>--pdf paper.pdf</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>--output</code></td>
+                        <td><code>-o</code></td>
+                        <td>Output file path (default: citations.bib)</td>
+                        <td><code>--output refs.bib</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>--format</code></td>
+                        <td><code>-f</code></td>
+                        <td>Output format (default: bibtex)</td>
+                        <td><code>--format bibtex</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>--config</code></td>
+                        <td><code>-c</code></td>
+                        <td>Path to custom config file</td>
+                        <td><code>--config config.yaml</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>--verbose</code></td>
+                        <td><code>-v</code></td>
+                        <td>Enable detailed logging</td>
+                        <td><code>--verbose</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>--help</code></td>
+                        <td></td>
+                        <td>Show help message</td>
+                        <td><code>--help</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <strong>Note:</strong> You must specify either <code>--dir</code> (for batch processing) OR <code>--pdf</code> (for single file), but not both.
+            </div>
+
+            <h3>Processing a Directory</h3>
+            <p>To process all PDF files in a folder:</p>
+            <pre><code>pdf-citation-extract.exe --dir "C:\Users\YourName\Documents\Papers" --output my_references.bib</code></pre>
+
+            <h3>Processing a Single PDF</h3>
+            <p>To process just one PDF file:</p>
+            <pre><code>pdf-citation-extract.exe --pdf "C:\Users\YourName\Documents\important_paper.pdf" --output citation.bib</code></pre>
+
+            <h3>Custom Output Location</h3>
+            <p>Save the output file to a specific location:</p>
+            <pre><code>pdf-citation-extract.exe --dir "C:\Papers" --output "C:\MyDocuments\bibliography.bib"</code></pre>
+
+            <h3>Verbose Mode</h3>
+            <p>Get detailed information about the extraction process:</p>
+            <pre><code>pdf-citation-extract.exe --dir "C:\Papers" --output citations.bib --verbose</code></pre>
+        </div>
+
+        <!-- Configuration -->
+        <div class="doc-section" id="configuration">
+            <h2>Configuration</h2>
+
+            <h3>Default Configuration</h3>
+            <p>The application works out-of-the-box with default settings. However, you can customize behavior using a configuration file.</p>
+
+            <h3>Creating a Custom Configuration</h3>
+            <ol>
+                <li>Create a file named <code>config.yaml</code> in the same folder as the executable</li>
+                <li>Copy and modify the following template:</li>
+            </ol>
+
+            <pre><code># PDF Citation Extractor Configuration
+
+# Email for CrossRef API (polite pool - faster response)
+# Providing your email gets you faster API responses
+crossref_email: "your.email@example.com"
+
+# Output settings
+default_output_format: "bibtex"
+output_directory: "./output"
+
+# Extraction settings
+extraction:
+  # Number of pages to scan for DOI (1-5 recommended)
+  doi_scan_pages: 3
+
+  # Extraction strategy order
+  strategy:
+    - "embedded_metadata"  # Try PDF metadata first
+    - "doi_lookup"         # Then try DOI extraction + CrossRef
+    # - "grobid"           # Uncomment if GROBID service is available
+
+# GROBID service configuration (optional)
+# Requires GROBID Docker container running
+grobid_url: "http://localhost:8070"</code></pre>
+
+            <h3>Using Custom Configuration</h3>
+            <pre><code>pdf-citation-extract.exe --dir "C:\Papers" --config "C:\MyConfig\config.yaml"</code></pre>
+
+            <h3>CrossRef Email Configuration</h3>
+            <p>Providing your email to CrossRef's API moves you to their "polite pool," which provides:</p>
+            <ul>
+                <li>Faster response times</li>
+                <li>Higher request limits</li>
+                <li>Better reliability</li>
+            </ul>
+            <p>Simply add your email to the <code>config.yaml</code> file or leave it empty for standard access.</p>
+        </div>
+
+        <!-- Examples -->
+        <div class="doc-section" id="examples">
+            <h2>Examples</h2>
+
+            <h3>Example 1: Basic Directory Processing</h3>
+            <p><strong>Scenario:</strong> You have 10 research papers in a folder and want to generate a bibliography.</p>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Create a folder with your PDFs: <code>C:\Research\Papers2024\</code></li>
+                <li>Open Command Prompt</li>
+                <li>Run:
+                    <pre><code>cd C:\path\to\pdf-citation-extract
+pdf-citation-extract.exe --dir "C:\Research\Papers2024" --output "C:\Research\my_bibliography.bib"</code></pre>
+                </li>
+            </ol>
+            <p><strong>Expected Output:</strong></p>
+            <pre><code>Initializing PDF Citation Extractor...
+Processing directory: C:\Research\Papers2024
+Found 10 PDF files
+Processing PDFs: 100%|████████████| 10/10
+Processing complete: 8 successful, 2 failed
+
+Exporting 8 citations to C:\Research\my_bibliography.bib...
+Successfully exported to C:\Research\my_bibliography.bib
+
+Summary:
+  - Total PDFs processed: 8
+  - Output format: bibtex
+  - Output file: C:\Research\my_bibliography.bib</code></pre>
+
+            <h3>Example 2: Single Important Paper</h3>
+            <p><strong>Scenario:</strong> You need to cite one specific paper.</p>
+            <p><strong>Steps:</strong></p>
+            <pre><code>pdf-citation-extract.exe --pdf "C:\Downloads\nature_paper_2024.pdf" --output citation.bib</code></pre>
+            <p><strong>Expected Output:</strong></p>
+            <pre><code>Initializing PDF Citation Extractor...
+Processing single PDF: nature_paper_2024.pdf
+Found DOI: 10.1038/s41586-024-xxxxx
+
+Exporting 1 citations to citation.bib...
+Successfully exported to citation.bib</code></pre>
+
+            <h3>Example 3: Multiple Projects</h3>
+            <p><strong>Scenario:</strong> You're working on multiple papers and want separate bibliographies.</p>
+            <p><strong>Project A:</strong></p>
+            <pre><code>pdf-citation-extract.exe --dir "C:\Projects\ProjectA\References" --output "C:\Projects\ProjectA\references.bib"</code></pre>
+            <p><strong>Project B:</strong></p>
+            <pre><code>pdf-citation-extract.exe --dir "C:\Projects\ProjectB\References" --output "C:\Projects\ProjectB\references.bib"</code></pre>
+
+            <h3>Example 4: Debugging Failed Extractions</h3>
+            <p><strong>Scenario:</strong> Some PDFs aren't being processed correctly.</p>
+            <p><strong>Steps:</strong></p>
+            <pre><code>pdf-citation-extract.exe --dir "C:\Papers" --output citations.bib --verbose</code></pre>
+            <p>This will show detailed logs including:</p>
+            <ul>
+                <li>Which extraction method is being used</li>
+                <li>DOI search results</li>
+                <li>CrossRef API responses</li>
+                <li>Error messages for failed files</li>
+            </ul>
+            <p>Check the generated <code>pdf_citation_extractor.log</code> file for complete details.</p>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="doc-section" id="troubleshooting">
+            <h2>Troubleshooting</h2>
+
+            <h3>Issue: "No citations extracted"</h3>
+            <p><strong>Possible Causes:</strong></p>
+            <ul>
+                <li>PDFs don't contain DOI information</li>
+                <li>PDFs are scanned images (not text-searchable)</li>
+                <li>Network connection issues preventing CrossRef lookups</li>
+            </ul>
+            <p><strong>Solutions:</strong></p>
+            <ol>
+                <li>Check if PDFs are text-searchable (try selecting text in the PDF)</li>
+                <li>Verify internet connection</li>
+                <li>Run with <code>--verbose</code> flag to see detailed error messages</li>
+                <li>Check <code>pdf_citation_extractor.log</code> for more information</li>
+            </ol>
+
+            <h3>Issue: "Cannot find pdf-citation-extract.exe"</h3>
+            <p><strong>Solution:</strong> Make sure you're in the correct directory:</p>
+            <pre><code>cd C:\path\to\folder\containing\exe</code></pre>
+            <p>Or use the full path:</p>
+            <pre><code>"C:\path\to\pdf-citation-extract.exe" --dir "C:\Papers"</code></pre>
+
+            <h3>Issue: Some PDFs fail to process</h3>
+            <p><strong>This is normal!</strong> Not all PDFs contain extractable metadata. Reasons include:</p>
+            <ul>
+                <li>PDF is a scanned image without OCR</li>
+                <li>No DOI present in the document</li>
+                <li>DOI is malformed or not recognized</li>
+                <li>Embedded metadata is missing or corrupted</li>
+            </ul>
+            <p><strong>Solutions:</strong></p>
+            <ul>
+                <li>For scanned PDFs, use OCR software first</li>
+                <li>Manually add citations for failed PDFs</li>
+                <li>Consider using GROBID integration for better extraction</li>
+            </ul>
+
+            <h3>Issue: CrossRef lookups are slow</h3>
+            <p><strong>Solutions:</strong></p>
+            <ol>
+                <li>Add your email to <code>config.yaml</code> to use the polite pool:
+                    <pre><code>crossref_email: "your.email@example.com"</code></pre>
+                </li>
+                <li>Check your internet connection speed</li>
+                <li>Process smaller batches of PDFs at a time</li>
+            </ol>
+
+            <h3>Issue: Permission denied when writing output file</h3>
+            <p><strong>Solutions:</strong></p>
+            <ol>
+                <li>Ensure you have write permissions in the output directory</li>
+                <li>Close any programs that might have the output file open</li>
+                <li>Try saving to a different location:
+                    <pre><code>pdf-citation-extract.exe --dir "C:\Papers" --output "%USERPROFILE%\Desktop\citations.bib"</code></pre>
+                </li>
+            </ol>
+
+            <h3>Issue: "Error: Must specify either --dir or --pdf"</h3>
+            <p><strong>Solution:</strong> You forgot to specify input files. Use either:</p>
+            <pre><code>pdf-citation-extract.exe --dir "C:\Papers"        # For directory
+pdf-citation-extract.exe --pdf "paper.pdf"        # For single file</code></pre>
+        </div>
+
+        <!-- FAQ -->
+        <div class="doc-section" id="faq">
+            <h2>FAQ</h2>
+
+            <h4>Q: What PDF formats are supported?</h4>
+            <p><strong>A:</strong> Standard PDF 1.4 and higher. The PDFs should be text-based (not scanned images unless OCR has been applied).</p>
+
+            <h4>Q: Can I process password-protected PDFs?</h4>
+            <p><strong>A:</strong> No, password-protected PDFs cannot be processed. You'll need to remove the password first.</p>
+
+            <h4>Q: What if my PDF doesn't have a DOI?</h4>
+            <p><strong>A:</strong> The tool will try to extract embedded metadata. If that's insufficient, the PDF will be skipped. Consider adding the citation manually or using GROBID integration.</p>
+
+            <h4>Q: Can I import the .bib file into EndNote?</h4>
+            <p><strong>A:</strong> Yes! While the tool generates BibTeX format, EndNote can import .bib files. Go to File → Import in EndNote and select BibTeX as the import filter.</p>
+
+            <h4>Q: How do I import citations into Zotero?</h4>
+            <p><strong>A:</strong> In Zotero: File → Import → Select your .bib file → Click "Open"</p>
+
+            <h4>Q: How do I import citations into JabRef?</h4>
+            <p><strong>A:</strong> In JabRef: File → Import into current library → Select "BibTeX" → Choose your .bib file</p>
+
+            <h4>Q: Can I process PDFs from cloud storage (Google Drive, Dropbox)?</h4>
+            <p><strong>A:</strong> Yes, but you need to download them to your local computer first. The tool doesn't access cloud storage directly.</p>
+
+            <h4>Q: Does this work offline?</h4>
+            <p><strong>A:</strong> Partially. Embedded metadata extraction works offline, but CrossRef API lookups require internet connection.</p>
+
+            <h4>Q: How many PDFs can I process at once?</h4>
+            <p><strong>A:</strong> There's no hard limit, but processing large collections (100+ PDFs) may take time. Consider processing in smaller batches for better control.</p>
+
+            <h4>Q: Is my data sent anywhere?</h4>
+            <p><strong>A:</strong> Only DOI numbers are sent to CrossRef's public API to retrieve metadata. No PDF content is uploaded anywhere.</p>
+
+            <h4>Q: Can I contribute or report issues?</h4>
+            <p><strong>A:</strong> This is an open-source project! Check the repository for contribution guidelines and issue reporting.</p>
+
+            <h4>Q: What if I get duplicate entries?</h4>
+            <p><strong>A:</strong> This can happen if you process the same PDF twice. Most reference managers can detect and merge duplicates.</p>
+        </div>
+
+        <!-- Support -->
+        <div class="doc-section">
+            <h2>Support</h2>
+            <p>For additional help:</p>
+            <ul>
+                <li>Check the log file: <code>pdf_citation_extractor.log</code></li>
+                <li>Review error messages when running with <code>--verbose</code> flag</li>
+                <li>Consult the project repository for updates and documentation</li>
+            </ul>
+        </div>
+
+        <!-- Back Link -->
+        <a href="index.html" class="back-link">← Back to Documentation</a>
     </div>
 </section>
 
