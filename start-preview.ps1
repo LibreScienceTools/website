@@ -35,7 +35,7 @@ Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "  Your website will be available at:" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "    http://localhost:4000" -ForegroundColor Green
+Write-Host "    http://localhost:4000/website/" -ForegroundColor Green
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
@@ -45,4 +45,5 @@ Write-Host "Starting in 3 seconds..." -ForegroundColor Gray
 Start-Sleep -Seconds 3
 
 # Start Jekyll server
+# Access at: http://localhost:4000/website/
 jekyll serve

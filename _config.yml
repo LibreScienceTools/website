@@ -6,7 +6,7 @@ url: "https://libresciencetools.github.io" # Your GitHub Pages URL
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+# permalink: pretty  # Commented out - keeps .html extensions for clarity
 
 # Exclude files from processing
 exclude:
