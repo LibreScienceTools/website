@@ -216,6 +216,19 @@ description: Complete guide for using PDF Citation Extractor to automatically ex
         font-weight: bold;
         margin-right: 0.5rem;
     }
+
+    .table-wrapper {
+        overflow-x: auto;
+        margin: 1rem 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: 768px) {
+        .table-wrapper {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+        }
+    }
 </style>
 
 <section class="content-section">
@@ -344,60 +357,62 @@ pdf-citation-extract.exe --help</code></pre>
             <pre><code>pdf-citation-extract.exe [OPTIONS]</code></pre>
 
             <h4>Available Options</h4>
-            <table class="options-table">
-                <thead>
-                    <tr>
-                        <th>Option</th>
-                        <th>Short</th>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>--dir</code></td>
-                        <td><code>-d</code></td>
-                        <td>Directory containing PDF files</td>
-                        <td><code>--dir C:\Papers</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>--pdf</code></td>
-                        <td><code>-p</code></td>
-                        <td>Single PDF file to process</td>
-                        <td><code>--pdf paper.pdf</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>--output</code></td>
-                        <td><code>-o</code></td>
-                        <td>Output file path (default: citations.bib)</td>
-                        <td><code>--output refs.bib</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>--format</code></td>
-                        <td><code>-f</code></td>
-                        <td>Output format (default: bibtex)</td>
-                        <td><code>--format bibtex</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>--config</code></td>
-                        <td><code>-c</code></td>
-                        <td>Path to custom config file</td>
-                        <td><code>--config config.yaml</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>--verbose</code></td>
-                        <td><code>-v</code></td>
-                        <td>Enable detailed logging</td>
-                        <td><code>--verbose</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>--help</code></td>
-                        <td></td>
-                        <td>Show help message</td>
-                        <td><code>--help</code></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table class="options-table">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Short</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>--dir</code></td>
+                            <td><code>-d</code></td>
+                            <td>Directory containing PDF files</td>
+                            <td><code>--dir C:\Papers</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>--pdf</code></td>
+                            <td><code>-p</code></td>
+                            <td>Single PDF file to process</td>
+                            <td><code>--pdf paper.pdf</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>--output</code></td>
+                            <td><code>-o</code></td>
+                            <td>Output file path (default: citations.bib)</td>
+                            <td><code>--output refs.bib</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>--format</code></td>
+                            <td><code>-f</code></td>
+                            <td>Output format (default: bibtex)</td>
+                            <td><code>--format bibtex</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>--config</code></td>
+                            <td><code>-c</code></td>
+                            <td>Path to custom config file</td>
+                            <td><code>--config config.yaml</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>--verbose</code></td>
+                            <td><code>-v</code></td>
+                            <td>Enable detailed logging</td>
+                            <td><code>--verbose</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>--help</code></td>
+                            <td></td>
+                            <td>Show help message</td>
+                            <td><code>--help</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="info-box">
                 <strong>Note:</strong> You must specify either <code>--dir</code> (for batch processing) OR <code>--pdf</code> (for single file), but not both.
