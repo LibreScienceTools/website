@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Open hardware designs and scientific instruments by LibreScienceTool">
+    <title>Open Hardware - LibreScienceTool</title>
+    <link rel="stylesheet" href="/website/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <h1>LibreScienceTools</h1>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="/website/" >Home</a></li>
+            <li><a href="/website/software/" >Open Source</a></li>
+            <!-- <li><a href="/website/hardware/" class="active">Open Hardware</a></li> -->
+            <li><a href="/website/documentation/" >Documentation</a></li>
+            <li><a href="/website/blog/" >Blog</a></li>
+            <li><a href="/website/about/" >About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+});
+</script>
+
+
+    <!-- Header -->
+<section class="content-section">
+    <div class="container">
+        <div class="section-header">
+            <h1>Open Hardware</h1>
+            <p>Access designs, schematics, and documentation for open hardware scientific instruments</p>
+        </div>
+
+        <!-- Hardware Grid -->
+        <div class="project-grid">  
+            <h3>In construction...</h3>
+            <!-- Example Hardware 1 - Replace with your actual hardware projects 
+            <div class="project-card">
+                <h3>Hardware Project 1</h3>
+                <div class="project-meta">Type: Measurement Device | License: CERN-OHL-S</div>
+                <p>
+                    Description of your hardware project. Include what it measures, its specifications,
+                    and what makes it useful for scientific research.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Sensor</span>
+                    <span class="tag">Arduino</span>
+                    <span class="tag">DIY</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub →</a>
+                    <a href="#" target="_blank">Schematics →</a>
+                    <a href="#" target="_blank">BOM →</a>
+                </div>
+            </div>
+            -->
+
+            
+        </div>
+
+        <!-- Open Hardware Philosophy -->
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2>Why Open Hardware?</h2>
+            <p style="max-width: 800px; margin: 1rem auto; text-align: left;">
+                Open hardware enables researchers and institutions with limited budgets to build
+                high-quality scientific instruments. By sharing designs, schematics, and BOMs,
+                we empower the global scientific community to:
+            </p>
+            <ul style="max-width: 800px; margin: 1rem auto; text-align: left; color: #4b5563; font-size: 1.125rem;">
+                <li>Build instruments at a fraction of commercial costs</li>
+                <li>Customize equipment for specific research needs</li>
+                <li>Learn from and improve upon existing designs</li>
+                <li>Repair and maintain equipment independently</li>
+            </ul>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="section-header">
+            <h2>Build Something Amazing</h2>
+            <p>
+                All our hardware designs are freely available. Download the files, build your own,
+                and share your improvements with the community!
+            </p>
+            <a href="https://github.com" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                View Hardware Repositories
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 LibreScienceTools. All projects released under open source licenses.</p>
+        <p>
+            <a href="https://github.com" target="_blank">GitHub</a> |
+            <a href="/website/about/">About</a> |
+            <a href="/website/blog/">Blog</a>
+        </p>
+        <p>
+            <a href="/website/impressum.html">Impressum</a> |
+            <a href="/website/privacy_policy.html">Privacy Policy</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

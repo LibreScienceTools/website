@@ -1,0 +1,15 @@
+# Site settings
+title: LibreScienceTool
+description: Open source and open hardware for engineering science
+baseurl: "/website" # Repository name for GitHub Pages
+url: "https://libresciencetools.github.io" # Your GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+# permalink: pretty  # Commented out - keeps .html extensions for clarity
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

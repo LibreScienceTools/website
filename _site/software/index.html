@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Open source software projects by LibreScienceTool">
+    <title>Open Source Projects - LibreScienceTool</title>
+    <link rel="stylesheet" href="/website/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <h1>LibreScienceTools</h1>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="/website/" >Home</a></li>
+            <li><a href="/website/software/" class="active">Open Source</a></li>
+            <!-- <li><a href="/website/hardware/" >Open Hardware</a></li> -->
+            <li><a href="/website/documentation/" >Documentation</a></li>
+            <li><a href="/website/blog/" >Blog</a></li>
+            <li><a href="/website/about/" >About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+});
+</script>
+
+
+    <!-- Header -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h1>Open Source Projects</h1>
+                <p>Explore our collection of open source software for scientific research and engineering</p>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="project-grid">
+                
+                <!-- Example Project 1 - Replace with your actual projects -->
+                <div class="project-card">
+                    <h3>PDF Citation Scimmer</h3>
+                    <div class="project-meta">Language: Python | License: MIT</div>
+                    <p>
+                        Place scientific papers as PDFs in a directory and let the executable run. The program scims the PDFs
+                        and stores the papers meta data to a .bib file. This .bib file can be imported with Citavi, JabRef, and Zetero.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+        
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/LibreScienceTools/pdf_citation_scimmer/releases/download/publish_release_v1.0/pdf-citation-extract.exe" target="_blank">Download Executable →</a>
+                        <a href="https://github.com/LibreScienceTools/pdf_citation_scimmer/tree/release_v1.0" target="_blank">GitHub (release v1.0) →</a>
+                        <a href="../documentation/pdf_citation_scimmer_documentation.html" target="_blank">User Manual →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="section-header">
+                <h2>Want to Contribute?</h2>
+                <p>
+                    We welcome contributions from the community! Check out our repositories,
+                    report issues, or submit pull requests. Every contribution helps make
+                    science more accessible.
+                </p>
+                <a href="https://github.com" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 LibreScienceTools. All projects released under open source licenses.</p>
+        <p>
+            <a href="https://github.com" target="_blank">GitHub</a> |
+            <a href="/website/about/">About</a> |
+            <a href="/website/blog/">Blog</a>
+        </p>
+        <p>
+            <a href="/website/impressum.html">Impressum</a> |
+            <a href="/website/privacy_policy.html">Privacy Policy</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

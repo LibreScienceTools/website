@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LibreScienceTools - Open source and open hardware for engineering science">
+    <title>LibreScienceTools - Open Science for Everyone</title>
+    <link rel="stylesheet" href="/website/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <h1>LibreScienceTools</h1>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="/website/" class="active">Home</a></li>
+            <li><a href="/website/software/" >Open Source</a></li>
+            <!-- <li><a href="/website/hardware/" >Open Hardware</a></li> -->
+            <li><a href="/website/documentation/" >Documentation</a></li>
+            <li><a href="/website/blog/" >Blog</a></li>
+            <li><a href="/website/about/" >About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+});
+</script>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Open Science for Everyone</h1>
+            <p class="hero-subtitle">
+                LibreScienceTools provides open source software and open hardware
+                to the engineering science community. My mission is to make scientific
+                tools accessible to everyone.
+            </p>
+            <div class="hero-buttons">
+                <a href="software/" class="btn btn-primary">Explore Projects</a>
+               <!-- <a href="hardware/" class="btn btn-secondary">View Hardware</a> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Open Source Software</h3>
+                    <p>Explore a collection of open source tools and applications designed for scientific research and engineering.</p>
+                    <a href="software/" class="feature-link">View Projects →</a>
+                </div>
+                <!--
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Open Hardware</h3>
+                    <p>Access designs, schematics, and documentation for open hardware scientific instruments and equipment.</p>
+                    <a href="hardware/" class="feature-link">View Hardware →</a>
+                </div>
+                -->
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Blog & Resources</h3>
+                    <p>Read about the latest developments, tutorials, and insights from the open science community.</p>
+                    <a href="blog/" class="feature-link">Read Blog →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <h2>The Mission</h2>
+            <p>
+                Having benefited immensely from the open source community, LibreScienceTool
+                is my way of giving back. I believe that scientific tools and knowledge
+                should be freely accessible to researchers, students, and enthusiasts worldwide.
+            </p>
+            <!--p>
+                All projects are released under permissive licenses—use them, modify them,
+                or make them entirely your own. No strings attached. If you find them useful,
+                feel free to support the project through donations, but the tools will always
+                remain free and open.
+            </p -->
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 LibreScienceTools. All projects released under open source licenses.</p>
+        <p>
+            <a href="https://github.com" target="_blank">GitHub</a> |
+            <a href="/website/about/">About</a> |
+            <a href="/website/blog/">Blog</a>
+        </p>
+        <p>
+            <a href="/website/impressum.html">Impressum</a> |
+            <a href="/website/privacy_policy.html">Privacy Policy</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
